@@ -3,12 +3,13 @@
 </p>
 
 <h1 align="center">
- <a href="https://hailton-nascimento.github.io/JogoDaMemoria/" target="_blank" rel="noopener noreferrer">Demo</a>
+ <a href="https://hailton-nascimento.github.io/JogoDaVelha/" target="_blank" rel="noopener noreferrer">Demo</a>
 </h1>
 
-# Jogo da Memória
-Nesse projeto, o desafio foi criar um jogo da memória utilizando apenas HTML, CSS e Javascript, trabalhando com efeitos 3D no CSS e lógica de programação utilizando condicionais, Immediately Invoked Function Expression e manipulação de Array em um projeto super divertido.
-Jogo da memoria desenvovido em JavaScript puro, desenvovido para aprendizagem, com muita versatilidade, sendo possivel alterar quantidade de cartas e tipos de imagens.
+# Jogo da Velha
+
+Projeto muito desafiador, com logicas bastante complexas, foi desenvolvido em HTML, CSS, Javascript. O modulo de jogador autônomo precisou de uma atenção especial para ser desenvolvido. Os pontos são salvos no banco de dados do Browser (localStorage).
+
 
 
 <h2 id="tecnologias">
