@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da velha</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" type="imagem/png" href="img/favicon.png" />
+
+
+</head>
+
+<body>
+
+
+    <div class="container-geral">
+        <h1 class=" title"><span class="voce-span">X</span> Jogo da Velha <span class="computador-span">O</span></h1>
+
+        <div class="escolha-jogador ">
+            <h1>Escolha com qual<br>vai de jogar.</h1>
+            <div class="wraper-button">
+                <button class="botao X">X</button>
+                <button class="botao O">O</button>
+
+            </div>
+
+        </div>
+
+        <div class="modal-vez player-1">É sua vez<br>de jogar</div>
+        <div class="modal-vez player-2">É a vez do<br> computador</div>
+
+
+        <div class="modal-avisos">
+            <div class="msg"></div>
+
+
+        </div>
+
+        <div class="modal-sorteio">
+            <div class="">Sorteando quem<br>vai jogar primeiro.</div>
+            <div class="wraper-modal-sorterio">
+                <div class="cartas">
+                    <div class="card X front">X</div>
+                    <div class="card O right">O</div>
+                    <div class="card X back">X</div>
+                    <div class="card O left">O</div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="playin">
+            <div class="header-info">
+
+                <div class="info-placar">
+                    <h2>Placar</h2>
+                    <div class="placar voce">
+                        <h3 class="player">Você(<span></span>):</h3>
+                        <h3 class="pontos">15</h3>
+                    </div>
+
+                    <div class="placar computador">
+                        <h3 class="player">Computador(<span></span>)</h3>
+                        <h3 class="pontos">15</h3>
+                    </div>
+
+                </div>
+
+                <div class="infoitem">
+                    <button class="reset">Resetar</button>
+                    <button class="voltar">Voltar</button>
+                </div>
+            </div>
+
+            <div class="grid-jogo" value="">
+                <div data-item="a1" class="item b r" value=""></div>
+                <div data-item="a2" class="item b r" value=""></div>
+                <div data-item="a3" class="item b" value=""></div>
+
+                <div data-item="b1" class="item b r" value=""></div>
+                <div data-item="b2" class="item b r" value=""></div>
+                <div data-item="b3" class="item b" value=""></div>
+
+                <div data-item="c1" class="item r" value=""></div>
+                <div data-item="c2" class="item r" value=""></div>
+                <div data-item="c3" class="item" value=""></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="script/script.js"></script>
+</body>
+
+</html>
