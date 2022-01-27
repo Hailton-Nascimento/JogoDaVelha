@@ -112,7 +112,6 @@ function handlePlayer() {
 }
 
 function handleModalAviso(msg, botao) {
-    console.log("entrou no mostrar modal aviso");
     limparAviso();
     showElement(".modal-avisos", "mostrar");
     document.querySelector(".modal-avisos .msg").innerHTML = msg;
@@ -205,7 +204,7 @@ function sortearPlayer() {
 }
 
 function iniciaPatida() {
-    console.log("Inicio Partida");
+
     Object.keys(QUADROORIGINAL).forEach((casa) => {
         QUADROORIGINAL[casa] = "";
         let element = document.querySelector(`[data-item=${casa}]`);
@@ -230,7 +229,7 @@ function iniciaPatida() {
 }
 
 function animarSorteio() {
-    console.log("animou sorterio");
+
     (PLAYERVEZ == "X") ? document.body.style.setProperty("--rotation", "540deg"):
         document.body.style.setProperty("--rotation", "630deg");
 
@@ -266,7 +265,7 @@ function animarVitoria(combinacao) {
 
 function verificarSentido(combinacao) {
     let posicoes = combinacao.toString().split("");
-    console.log(posicoes);
+
     if (posicoes[0] == posicoes[3]) {
         document.body.style.setProperty("--tamanhoBefore", "105px");
         return "90deg";
@@ -276,19 +275,19 @@ function verificarSentido(combinacao) {
         return "0";
     }
     if (posicoes[1] < posicoes[4] && posicoes[0] === "a") {
-        console.log("entrou no 135");
+
         document.body.style.setProperty("--tamanhoBefore", "140px");
         return "135deg";
     }
     if (posicoes[1] < posicoes[4]) {
-        console.log("entrou no 45");
+
         document.body.style.setProperty("--tamanhoBefore", "140px");
         return "45deg";
     }
 }
 
 function jogar({ target }) {
-    console.log("jogar");
+
 
     if (PLAYING.status[PLAYING.index] && target.innerHTML === "") {
         let casa = target.getAttribute("data-item");
@@ -297,7 +296,7 @@ function jogar({ target }) {
 }
 
 function adicionaElemento(casa) {
-    console.log("adicionou casa");
+
     QUADROORIGINAL[casa] = PLAYERVEZ;
     handleQuadro();
 
@@ -322,19 +321,18 @@ function adicionaElemento(casa) {
         }
         PLAYING.trocar();
     } else if (NUNJOGADAS == 8) {
-        console.log("entrou aqui");
+
         WARNING = "JOGO EMPATADO";
         handleModalAviso("Jogo<br>empatou!", novoJogoElement);
         // PLAYING.trocar();
-    } else {
-        trocarPlayer();
-        NUNJOGADAS++;
-        console.log(NUNJOGADAS);
     }
+    trocarPlayer();
+    NUNJOGADAS++;
+
 }
 
 function trocarPlayer() {
-    console.log("trocou player");
+
     if (NUNJOGADAS <= 9) {
         if (PLAYERVEZ === PLAYER_1) {
             document.querySelector(".grid-jogo").removeAttribute("value");
@@ -358,13 +356,11 @@ function trocarPlayer() {
 }
 
 function fecharModalAviso() {
-    console.log("fechou modal-avisos");
     hidenElement(".modal-avisos", "mostrar");
     limparAviso();
 }
 
 function simNao({ target }) {
-    console.log("clicou sim ou não");
     if (target.className === "sim") {
         pontosPlayer_2++;
         atualizaPontos();
@@ -374,12 +370,11 @@ function simNao({ target }) {
 }
 
 function limparAviso() {
-    console.log("limpa modal-aviso");
     document.querySelector(".modal-avisos").innerHTML = msgElement;
 }
 
 function verificarVitoria(player) {
-    console.log("verificou vitoria");
+
     for (combinacao of COMBINACOESVITORIA) {
         let combinacaoArray = combinacao.split(",");
         let temVendecor = combinacaoArray.every(
@@ -395,7 +390,7 @@ function verificarVitoria(player) {
 }
 
 function ehGameOver() {
-    console.log("verificou game over");
+
     return NUNJOGADAS === 8;
 }
 
@@ -411,7 +406,6 @@ function questionarResetar() {
 }
 
 function resetar() {
-    console.log("Resetou");
     fecharModalAviso();
     iniciaPatida();
     PLAYING.index = 1;
@@ -454,7 +448,6 @@ function atualizaPontos() {
 // melhorar code
 
 function jogadaMaquina() {
-    console.log("maquina jogou");
 
     setTimeout(() => {
 
@@ -543,7 +536,7 @@ function apareceMais() {
     let maisChance = []
     Object.keys(QUADROORIGINAL).forEach((casa) => {
         let contador = 0;
-        console.log(casa);
+
         COMBINACOESVITORIA.forEach((combinacao) => {
 
             if (combinacao.split(",").includes(casa)) {
@@ -555,7 +548,4 @@ function apareceMais() {
 
 
     });
-    console.log(maisChance);
-
-
 }
